@@ -7,7 +7,7 @@ require 'rubygems/package_task'
 
 task :default => :test
 
-DLEXT = Config::CONFIG['DLEXT']
+DLEXT = RbConfig::CONFIG['DLEXT']
 VERS = '0.1.1'
 
 spec = Gem::Specification.new do |s|
@@ -37,7 +37,7 @@ spec = Gem::Specification.new do |s|
   s.homepage          = 'http://github.com/djungelvral/rpeg-multimarkdown'
   s.rubyforge_project = 'rpeg-multimarkdown'
 end
-  
+
 # For Mac OS X -- prevents prevent additional ._* files being added to tarball
 ENV['COPYFILE_DISABLE'] = 'true'
 
