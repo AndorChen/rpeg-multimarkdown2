@@ -1,7 +1,4 @@
 require 'rake/clean'
-# require 'rake/packagetask'
-# require 'rake/gempackagetask'
-
 require 'rubygems'
 require 'rubygems/package_task'
 
@@ -23,7 +20,7 @@ spec = Gem::Specification.new do |s|
                           'README.markdown','LICENSE','Rakefile',
                           '{lib,ext,test}/**.rb','ext/*.{c,h}',
                           'test/MultiMarkdownTest/**/*',
-                          'bin/rpeg-multimarkdown'
+                          'bin/rpeg-multimarkdown2'
                         ]
   s.bindir            = 'bin'
   s.executables       << 'rpeg-multimarkdown2'
@@ -109,7 +106,7 @@ end
 
 desc "Run conformance tests"
 task 'test:conformance' => [:build] do |t|
-  script = "#{pwd}/bin/rpeg-multimarkdown"
+  script = "#{pwd}/bin/rpeg-multimarkdown2"
   chdir("test/MultiMarkdownTest") do
     sh "./MarkdownTest.pl --script='#{script}' --flags='-c' --tidy"
     sh "./MarkdownTest.pl --script='#{script}' --testdir='MultiMarkdownTests'"
@@ -162,7 +159,7 @@ end
 # Rubyforge
 # ==========================================================
 
-PKGNAME = "pkg/rpeg-multimarkdown-#{VERS}"
+PKGNAME = "pkg/rpeg-multimarkdown2-#{VERS}"
 
 desc 'Publish new release to rubyforge'
 task :release => [ "#{PKGNAME}.gem", "#{PKGNAME}.tar.gz" ] do |t|

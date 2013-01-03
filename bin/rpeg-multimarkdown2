@@ -1,11 +1,11 @@
 #!/usr/bin/env ruby
 
 begin
-  require 'multimarkdown'
+  require 'multimarkdown2'
 rescue LoadError => boom
   local_path = File.expand_path(File.dirname(__FILE__))
   $: << "#{local_path}/../lib"
-  require 'multimarkdown'
+  require 'multimarkdown2'
 end
 
 # Option parser -- http://florianpilz.github.com/micro-optparse/
@@ -75,7 +75,7 @@ class Parser
     rescue OptionParser::ParseError => e
       puts e.message ; exit(1)
     end
-    
+
     validate(@result) if self.respond_to?("validate")
     @result
   end
@@ -84,7 +84,7 @@ end
 # Parse options
 options = Parser.new do |p|
   p.banner = "Ruby interface to MultiMarkdown"
-  p.version = "rpeg-multimarkdown 0.1.0"
+  p.version = "rpeg-multimarkdown2 2.0.1"
   p.option :compatibility, "markdown compatibility mode", :default => false
   p.option :filter_html, "filter out raw HTML except styles", :default => false
   p.option :process_html, "process MultiMarkdown inside of raw HTML", :default => false
