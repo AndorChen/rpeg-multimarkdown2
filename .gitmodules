@@ -1,6 +1,8 @@
 [submodule "peg-multimarkdown"]
 	path = peg-multimarkdown
 	url = git://github.com/fletcher/peg-multimarkdown.git
+  ignore = dirty
 [submodule "test/MultiMarkdownTest"]
 	path = test/MultiMarkdownTest
 	url = git://github.com/fletcher/MMD-Test-Suite.git
+  ignore = dirty

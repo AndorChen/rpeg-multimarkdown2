@@ -46,7 +46,7 @@ rb_multimarkdown_to_latex(int argc, VALUE *argv, VALUE self)
     VALUE text = rb_funcall(self, rb_intern("text"), 0);
     Check_Type(text, T_STRING);
     char * ptext = StringValuePtr(text);
-    
+
     int extensions = get_exts(self);
 
     char *latex = markdown_to_string(ptext, extensions, LATEX_FORMAT);
@@ -66,7 +66,7 @@ rb_multimarkdown_extract_metadata(VALUE self, VALUE key)
 
     Check_Type(key, T_STRING);
     char * pkey = StringValuePtr(key);
-    
+
     int extensions = get_exts(self);
 
     /* Display metadata on request */
@@ -80,17 +80,17 @@ rb_multimarkdown_extract_metadata(VALUE self, VALUE key)
 void Init_peg_multimarkdown()
 {
     rb_cMultiMarkdown = rb_define_class("PEGMultiMarkdown", rb_cObject);
-    /* 
+    /*
      * Document-method: PEGMultiMarkdown#to_html
-     * Return string containing HTML generated from `text` 
+     * Return string containing HTML generated from `text`
      */
     rb_define_method(rb_cMultiMarkdown, "to_html", rb_multimarkdown_to_html, -1);
-    /* 
+    /*
      * Document-method: PEGMultiMarkdown#to_latex
-     * Return string containing latex generated from `text` 
+     * Return string containing latex generated from `text`
      */
     rb_define_method(rb_cMultiMarkdown, "to_latex", rb_multimarkdown_to_latex, -1);
-    /* 
+    /*
      * Document-method: PEGMultiMarkdown#extract_metadata
      * call-seq:
      *     extract_metadata(key)
