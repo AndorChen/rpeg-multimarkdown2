@@ -8,10 +8,10 @@ require 'rubygems/package_task'
 task :default => :test
 
 DLEXT = RbConfig::CONFIG['DLEXT']
-VERS = '0.1.1'
+VERS = '2.0.1'
 
 spec = Gem::Specification.new do |s|
-  s.name              = "rpeg-multimarkdown"
+  s.name              = "rpeg-multimarkdown2"
   s.version           = VERS
   s.summary           = "Fast MultiMarkdown implementation"
   s.description       =<<-EOF
@@ -26,16 +26,15 @@ spec = Gem::Specification.new do |s|
                           'bin/rpeg-multimarkdown'
                         ]
   s.bindir            = 'bin'
-  s.executables       << 'rpeg-multimarkdown'
+  s.executables       << 'rpeg-multimarkdown2'
   s.require_path      = 'lib'
   s.extra_rdoc_files  = ['LICENSE']
   s.test_files        = FileList['test/multimarkdown_test.rb']
   s.extensions        = ['ext/extconf.rb']
 
-  s.authors           = ['Oliver Whyte','Ryan Tomayko']
-  s.email             = ['oawhyte@gmail.com','r@tomayko.com']
-  s.homepage          = 'http://github.com/djungelvral/rpeg-multimarkdown'
-  s.rubyforge_project = 'rpeg-multimarkdown'
+  s.authors           = ['Andor Chen']
+  s.email             = ['andor.chen.27@gmail.com']
+  s.homepage          = 'http://github.com/AndorChen/rpeg-multimarkdown2'
 end
 
 # For Mac OS X -- prevents prevent additional ._* files being added to tarball

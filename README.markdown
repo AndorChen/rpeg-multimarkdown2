@@ -1,20 +1,16 @@
-Ruby PEG MultiMarkdown
-======================
+# Ruby PEG MultiMarkdown 2
 
 An extension library around [Fletcher Penney's implementation][1]
-of MultiMarkdown in C. This library is based (almost entirely) on 
-[rpeg-markdown][2], which is a ruby extension library around
-[John MacFarlane's C implementation of Markdown][3].
+of MultiMarkdown in C. This library is based (almost entirely) on
+[rpeg-multimarkdown][2].
 
 [1]: http://github.com/fletcher/peg-multimarkdown/
-[2]: http://github.com/rtomayko/rpeg-markdown
-[3]: http://github.com/jgm/peg-markdown/
+[2]: https://github.com/djungelvral/rpeg-multimarkdown
 
-Synopsis
---------
+## Synopsis
 
-    >> require 'multimarkdown'
-    
+    >> require 'multimarkdown2'
+
     >> puts MultiMarkdown.new('Hello, world.').to_html
     # <p>Hello, world.</p>
 
@@ -29,29 +25,26 @@ Synopsis
 
     >> PEGMultiMarkdown.new('Hello! World!')
 
-Installation / Hacking
-----------------------
+## Installation / Hacking
 
 This library requires a recent version of glib2. All modern GNU userland
 systems should be fine.
 
 Install from GEM:
 
-    $ sudo gem install rpeg-multimarkdown
+    $ sudo gem install rpeg-multimarkdown2
 
 Hacking:
 
-    $ git clone git://github.com/djungelvral/rpeg-multimarkdown.git
-    $ cd rpeg-multimarkdown
+    $ git clone git://github.com/AndorChen/rpeg-multimarkdown2.git
+    $ cd rpeg-multimarkdown2
     $ rake test
 
-Changes
--------
+## Changes
 
   * [Version 0.1.1](http://github.com/djungelvral/rpeg-multimarkdown/tree/v0.1.1)
 
-COPYING
--------
+## COPYING
 
 The peg-markdown, peg-multimarkdown, and Ruby PEG Markdown extension sources
 are licensed under the GPL and the Ruby PEG MultiMarkdown extension sources
