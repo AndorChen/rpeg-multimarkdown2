@@ -11,7 +11,7 @@ int get_exts(VALUE self)
     if ( rb_funcall(self, rb_intern("notes"), 0) == Qtrue )
         extensions = extensions | EXT_NOTES ;
     if ( rb_funcall(self, rb_intern("no_labels"), 0) == Qtrue )
-        extensions = extensions | EXT_NO_LABELS
+        extensions = extensions | EXT_NO_LABELS ;
     if ( rb_funcall(self, rb_intern("filter_html"), 0) == Qtrue )
         extensions = extensions | EXT_FILTER_HTML ;
     if ( rb_funcall(self, rb_intern("filter_styles"), 0) == Qtrue )
