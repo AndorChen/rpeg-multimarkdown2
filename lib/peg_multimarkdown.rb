@@ -21,6 +21,9 @@ class PEGMultiMarkdown
   # Set `true` to have footnotes processed.
   attr_accessor :notes
 
+  # Set `true` to have labels generated.
+  attr_accessor :no_labels
+
   # Do not output `<style>` tags included in the source text.
   attr_accessor :filter_styles
 
@@ -47,7 +50,7 @@ class PEGMultiMarkdown
   # * `:filter_html` - Do not output raw HTML included in the
   #   source text.
   # * `:process_html` - Process MultiMarkdown code inside HTML tags.
-  # * `:compatibility` - Process MultiMarkdown code in Markdown 
+  # * `:compatibility` - Process MultiMarkdown code in Markdown
   #   compatibility mode (disables all other extensions)
   # * `:fold_lines` - RedCloth compatible line folding (not used).
   #
@@ -55,6 +58,7 @@ class PEGMultiMarkdown
     @text = text
     @smart = true
     @notes = true
+    @no_labels = false
     @filter_styles = false
     @filter_html = false
     @process_html = false
